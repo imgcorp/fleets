@@ -2,22 +2,22 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    run: k8stest
-  name: k8stest
+    run: k8stest-imgcorp-net
+  name: k8stest-imgcorp-net
 spec:
   replicas: 1
   selector:
     matchLabels:
-      run: k8stest
+      run: k8stest-imgcorp-net
   template:
     metadata:
       labels:
-        run: k8stest
+        run: k8stest-imgcorp-net
     spec:
       terminationGracePeriodSeconds: 30
       containers:
-      - name: k8stest
-        image: imgregistry:32000/k8stest.imgcorp.net
+      - name: k8stest-imgcorp-net
+        image: localhost:32000/k8stest.imgcorp.net
         imagePullPolicy: "Always"
         ports:
         - containerPort: 80
@@ -27,4 +27,4 @@ spec:
             port: 80
           initialDelaySeconds: 5
           periodSeconds: 5
-          successThreshold: 1
+          successThreshold: 1          
