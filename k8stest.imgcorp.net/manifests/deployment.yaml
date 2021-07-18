@@ -17,7 +17,7 @@ spec:
       terminationGracePeriodSeconds: 30
       containers:
       - name: k8stest-imgcorp-net
-        image: localhost:32000/k8stest.imgcorp.net
+        image: imgregistry:32000/k8stest.imgcorp.net
         imagePullPolicy: "Always"
         ports:
         - containerPort: 80
