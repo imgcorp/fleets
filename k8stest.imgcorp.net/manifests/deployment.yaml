@@ -14,7 +14,6 @@ spec:
       labels:
         run: k8stest-imgcorp-net
     spec:
-      terminationGracePeriodSeconds: 30
       containers:
       - name: k8stest-imgcorp-net
         image: imgregistry:32000/k8stest.imgcorp.net:latest
